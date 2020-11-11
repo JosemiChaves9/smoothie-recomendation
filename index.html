@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="color.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smoothie Generator</title>
+</head>
+
+<body>
+    <header>
+        <h1>Smoothie generator</h1>
+        <h4>Let's find your perfect smoothie!</h4>
+    </header>
+
+    <div class="train-instructions">
+        <h2>Train</h2>
+        <h4>First of all we need to train the engine</h4>
+        <h5>So rate the following smoothies according to your taste</h5>
+    </div>
+
+    <div class="container">
+        <div class="smoothie">
+            <div class="fruits">
+                <ul>
+                    <li>🥝</li>
+                    <li>🍓</li>
+                    <li>🍋</li>
+                    <li>🥭</li>
+                </ul>
+            </div>
+            <div class="rating">
+                <ul>
+                    <li>⭐</li>
+                    <li>⭐</li>
+                    <li>⭐</li>
+                    <li>⭐</li>
+                    <li>⭐</li>
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="smoothie">
+            <div class="fruits">
+                <ul>
+                    <li>🍈</li>
+                    <li>🍊</li>
+                    <li>🍑</li>
+                    <li>🍍</li>
+                </ul>
+            </div>
+            <div class="rating">
+                <ul>
+                    <li>⭐</li>
+                    <li>⭐</li>
+                    <li>⭐</li>
+                    <li>⭐</li>
+                    <li>⭐</li>
+                </ul>
+            </div>
+        </div>
+        <div class="smoothie">
+            <div class="fruit">
+                <ul>
+                    <li>🍐</li>
+                    <li>🍇</li>
+                    <li>🍉</li>
+                    <li>🍌</li>
+                </ul>
+            </div>
+            <div class="rating">
+                <ul>
+                    <li>⭐</li>
+                    <li>⭐</li>
+                    <li>⭐</li>
+                    <li>⭐</li>
+                    <li>⭐</li>
+                </ul>
+            </div>
+        </div>
+        <div class="smoothie">
+            <div class="fruit">
+                <ul>
+                    <li>🍎</li>
+                    <li>🍉</li>
+                    <li>🍍</li>
+                    <li>🥭</li>
+                </ul>
+            </div>
+            <div class="rating">
+                <ul>
+                    <li>⭐</li>
+                    <li>⭐</li>
+                    <li>⭐</li>
+                    <li>⭐</li>
+                    <li>⭐</li>
+                </ul>
+            </div>
+        </div> -->
+    </div>
+
+    <div>
+        <button>Train</button>
+        <button>Reset</button>
+    </div>
+
+    <div class="smoothie-build-instructions">
+        <h2>Now, build your smoothie!</h2>
+        <h5>The IA will determine if the smoothie is for your taste</h5>
+    </div>
+    <div class="smoothie-build">
+        <div class="fruit-options">
+            <form action="">
+                <select name="fruit-one" id="fruit-one">
+                    <option value=" "> </option>
+                    <option value="kiwi">🥝</option>
+                    <option value="strawberry">🍓</option>
+                    <option value="lemon">🍋</option>
+                    <option value="mango">🥭</option>
+                    <option value="melon">🍈</option>
+                    <option value="tangerine">🍊</option>
+                    <option value="peach">🍑</option>
+                    <option value="pineapple">🍍</option>
+                    <option value="grapes">🍇</option>
+                    <option value="watermelon">🍉</option>
+                    <option value="banana">🍌</option>
+                    <option value="apple">🍎</option>
+                </select>
+                <select name="fruit-two" id="fruit-two">
+                    <option value=" "> </option>
+                    <option value="kiwi">🥝</option>
+                    <option value="strawberry">🍓</option>
+                    <option value="lemon">🍋</option>
+                    <option value="mango">🥭</option>
+                    <option value="melon">🍈</option>
+                    <option value="tangerine">🍊</option>
+                    <option value="peach">🍑</option>
+                    <option value="pineapple">🍍</option>
+                    <option value="grapes">🍇</option>
+                    <option value="watermelon">🍉</option>
+                    <option value="banana">🍌</option>
+                    <option value="apple">🍎</option>
+                </select>
+                <select name="fruit-three" id="fruit-three">
+                    <option value=" "> </option>
+                    <option value="kiwi">🥝</option>
+                    <option value="strawberry">🍓</option>
+                    <option value="lemon">🍋</option>
+                    <option value="mango">🥭</option>
+                    <option value="melon">🍈</option>
+                    <option value="tangerine">🍊</option>
+                    <option value="peach">🍑</option>
+                    <option value="pineapple">🍍</option>
+                    <option value="grapes">🍇</option>
+                    <option value="watermelon">🍉</option>
+                    <option value="banana">🍌</option>
+                    <option value="apple">🍎</option>
+                </select>
+                <select name="fruit-four" id="fruit-four">
+                    <option value=" "> </option>
+                    <option value="kiwi">🥝</option>
+                    <option value="strawberry">🍓</option>
+                    <option value="lemon">🍋</option>
+                    <option value="mango">🥭</option>
+                    <option value="melon">🍈</option>
+                    <option value="tangerine">🍊</option>
+                    <option value="peach">🍑</option>
+                    <option value="pineapple">🍍</option>
+                    <option value="grapes">🍇</option>
+                    <option value="watermelon">🍉</option>
+                    <option value="banana">🍌</option>
+                    <option value="apple">🍎</option>
+                </select>
+                <input type="submit" value="Submit">
+            </form>
+            <p>You'll like the smoothie in a:
+                <!--To be filled with the result-->
+            </p>
+            <ul>
+                <li>⭐</li>
+                <li>⭐</li>
+                <li>⭐</li>
+                <li>⭐</li>
+                <li>⭐</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Just for keeping the color palette visible-->
+
+    <div class="color-palette">
+        <div class="color-palette-color" id="bluemunsell">Blue Munsell: #068d9dff</div>
+        <div class="color-palette-color" id="liberty">Liberty: #53599aff</div>
+        <div class="color-palette-color" id="ceruleanfrost">Cerulean frost: #6d9dc5ff</div>
+        <div class="color-palette-color" id="middlebluegreen">Middle blue green: #80ded9ff</div>
+        <div class="color-palette-color" id="blizzardblue">Blizzard blue: #aeecefff</div>
+    </div>
+
+</body>
+
+</html>
