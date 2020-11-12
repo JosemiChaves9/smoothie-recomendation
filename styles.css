@@ -28,8 +28,26 @@ header,
     background-color: #aeecefff;
 }
 
-ul {
-    padding-left: 40px;
+.container {
+    display: flex;
+    border: 1px solid red;
+    flex-wrap: wrap;
+    
 }
 
+.smoothie {
+    width: 50%;
+    font-size: 4rem;
+    padding: 10px;
+}
 
+.smoothie li{
+    float: left;
+}
+
+.smoothie ul {
+    width: 50;
+    list-style: none;
+    border: 1px solid green;
+
+}
