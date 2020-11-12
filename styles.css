@@ -15,13 +15,12 @@ header {
     background-color: var(--blueMunsell);
 }
 
-.smoothie-build-instructions {
-    background-color: var(--middleBlueGreen);
-}
-
 #container {
     width: 80%;
     margin: auto;
+}
+.smoothie-build-instructions {
+    background-color: var(--middleBlueGreen);
 }
 
 .smoothie {
