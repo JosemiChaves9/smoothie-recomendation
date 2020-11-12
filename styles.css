@@ -1,53 +1,67 @@
+:root {
+    --blueMunsell: #068D9DFF;
+    --liberty: #53599AFF;
+    --middleBlueGreen: #80DED9FF;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    font-family: 'Roboto', sans-serif;
-}
-
-header, 
-.train-instructions,
-.smoothie-build-instructions{
-    background-color: #6d9dc5ff;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-}
-
-.train-instructions {
-    background-color: #80ded9ff;
+header {
+    padding: 100px;
+    background-color: var(--blueMunsell);
 }
 
 .smoothie-build-instructions {
-    background-color: #aeecefff;
+    background-color: var(--middleBlueGreen);
 }
 
-.container {
-    display: flex;
-    border: 1px solid red;
-    flex-wrap: wrap;
-    
+#container {
+    width: 80%;
+    margin: auto;
 }
 
 .smoothie {
     width: 50%;
-    font-size: 4rem;
-    padding: 10px;
+    font-size: 2.5rem;
 }
 
-.smoothie li{
-    float: left;
+.predicted-rating {
+    font-size: 2.5rem;
 }
 
-.smoothie ul {
-    width: 50;
-    list-style: none;
-    border: 1px solid green;
+#fruit-one,
+#fruit-two,
+#fruit-three,
+#fruit-four {
+    border: 3px solid var(--liberty);
+    width: 80px;
+    height: 50px;
+    border-radius: 10px;
+    margin: 3px;
+    font-size: 1.5rem;
+}
 
+.fill-button {
+    background-color: var(--blueMunsell);
+    color: white;
+    font-weight: 600;
+    border: none;
+}
+
+.empty-button {
+    background-color: white;
+    color: var(--blueMunsell);
+    border: 1px solid var(--blueMunsell);
+    font-weight: 600;
+}
+
+.submit-button {
+    background-color: var(--liberty);
+    color: white;
+    font-weight: 600;
+    border: none;
 }
