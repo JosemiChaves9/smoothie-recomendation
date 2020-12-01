@@ -7,12 +7,12 @@ const smoothiesQuantity = 20;
 
 const generateRandomNumber = (min, max) => {
     return Math.floor(Math.random() * max) - min;
-}
+};
 
 const generateRandomFruit = () => {
     const randomNum = generateRandomNumber(0, fruits.length);
     return fruits[randomNum];
-}
+};
 
 const generateUniqueFruitForSmoothie = (smoothie) => {
     const randomFruit = generateRandomFruit();
@@ -20,8 +20,8 @@ const generateUniqueFruitForSmoothie = (smoothie) => {
         return generateUniqueFruitForSmoothie(smoothie);
     } else {
         return randomFruit;
-    }
-}
+    };
+};
 
 const generateSmoothie = (numberOfFruits) => {
     const smoothie = [];
@@ -44,14 +44,12 @@ const renderSmoothieListToDom = (smoothieList) => {
         stars.forEach((star) => {
             star.addEventListener("click", () => {
                 let rating = star.dataset.score;
-                smoothieList[idx].value = rating
+                smoothieList[idx].value = rating;
             })
-        })
+        });
         container.append(clone);
     });
 }
-
-
 
 const smoothieList = new Array(smoothiesQuantity).fill(null).map(() => ({
     smoothie: generateSmoothie(4),
@@ -59,4 +57,4 @@ const smoothieList = new Array(smoothiesQuantity).fill(null).map(() => ({
 }));
 
 renderSmoothieListToDom(smoothieList);
-console.log(smoothieList)
+console.log(smoothieList);
