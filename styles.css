@@ -68,3 +68,7 @@ header {
 .star {
     cursor: pointer;
 }
+
+.star--active ~ .star {
+    filter: grayscale(100%);
+  }
