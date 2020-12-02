@@ -3,7 +3,14 @@ const fruits = ['🍎', '🍐', '🍑', '🍌', '🍉', '🍇', '🍓', '🥥', 
 const template = document.getElementById("smoothie-template");
 const container = document.getElementById("container");
 const smoothiesQuantity = 20;
+let smoothieList;
 
+const generateSmoothieList = () => {
+    smoothieList = new Array(smoothiesQuantity).fill(null).map(() => ({
+        smoothie: generateSmoothie(4),
+        value: 0
+    }));
+}
 
 const generateRandomNumber = (min, max) => {
     return Math.floor(Math.random() * max) - min;
@@ -40,32 +47,37 @@ const renderSmoothieListToDom = (smoothieList) => {
         li[1].textContent = smoothieData.smoothie[1];
         li[2].textContent = smoothieData.smoothie[2];
         li[3].textContent = smoothieData.smoothie[3];
-        setStartEventListeners(clone, idx);
+        setStarEventListeners(clone, idx);
         container.append(clone);
     });
 }
 
-const setStartEventListeners = (clone, idx) => {
+const setStarEventListeners = (clone, idx) => {
     const stars = clone.querySelectorAll(".star");
     stars.forEach((star) => {
-        star.addEventListener("click", () => {
-            stars.forEach((starToRemoveClass) => starToRemoveClass.classList.remove(`star--active`))
-            star.classList.add(`star--active`);
-            let rating = star.dataset.score;
-            smoothieList[idx].value = rating;
-        });
+        star.addEventListener("click", () => onClickOnStar(stars, star, idx));
     });
 }
 
-const smoothieList = new Array(smoothiesQuantity).fill(null).map(() => ({
-    smoothie: generateSmoothie(4),
-    value: 0
-}));
+const onClickOnStar = (stars, star, idx) => {
+    stars.forEach((starToRemoveClass) => starToRemoveClass.classList.remove(`star--active`))
+    star.classList.add(`star--active`);
+    let rating = star.dataset.score;
+    smoothieList[idx].value = parseInt(rating);
+    console.log(smoothieList);
+}
 
 const resetDom = () => {
     const container = document.getElementById("container")
     container.innerHTML = '';
-    renderSmoothieListToDom(smoothieList)
+    start();
 }
-renderSmoothieListToDom(smoothieList);
-console.log(smoothieList);  
+
+// START
+
+const start = () => {
+    generateSmoothieList();
+    renderSmoothieListToDom(smoothieList);
+}
+
+start();
