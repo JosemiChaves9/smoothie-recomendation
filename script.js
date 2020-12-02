@@ -40,29 +40,32 @@ const renderSmoothieListToDom = (smoothieList) => {
         li[1].textContent = smoothieData.smoothie[1];
         li[2].textContent = smoothieData.smoothie[2];
         li[3].textContent = smoothieData.smoothie[3];
-        setStartEventListeners(clone);
+        setStartEventListeners(clone, idx);
         container.append(clone);
     });
 }
 
-const setStartEventListeners = (clone) => {
+const setStartEventListeners = (clone, idx) => {
     const stars = clone.querySelectorAll(".star");
     stars.forEach((star) => {
         star.addEventListener("click", () => {
             stars.forEach((starToRemoveClass) => starToRemoveClass.classList.remove(`star--active`))
             star.classList.add(`star--active`);
-
             let rating = star.dataset.score;
             smoothieList[idx].value = rating;
         });
     });
 }
 
-
 const smoothieList = new Array(smoothiesQuantity).fill(null).map(() => ({
     smoothie: generateSmoothie(4),
     value: 0
 }));
 
+const resetDom = () => {
+    const container = document.getElementById("container")
+    container.innerHTML = '';
+    renderSmoothieListToDom(smoothieList)
+}
 renderSmoothieListToDom(smoothieList);
-console.log(smoothieList);
+console.log(smoothieList);  

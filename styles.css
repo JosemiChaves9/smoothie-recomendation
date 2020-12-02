@@ -67,8 +67,15 @@ header {
 
 .star {
     cursor: pointer;
+    filter: grayscale(100%);
 }
 
+.star--active,
 .star--active ~ .star {
-    filter: grayscale(100%);
+    filter: grayscale(0%);
   }
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+}
