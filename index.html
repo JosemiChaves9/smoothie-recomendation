@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css" />
     <meta name=" viewport" content="width=device-width, initial-scale=1.0" />
     <title>Smoothie Recomendation</title>
+    <script src="//unpkg.com/brain.js"></script>
 </head>
 
 <body>
@@ -35,7 +36,7 @@
             </div>
             <div>
                 <ul class="rating">
-                    <li class="list-inline-item star" data-score="5">⭐</li>
+                    <li class="list-inline-item star " data-score="5">⭐</li>
                     <li class="list-inline-item star" data-score="4">⭐</li>
                     <li class="list-inline-item star" data-score="3">⭐</li>
                     <li class="list-inline-item star" data-score="2">⭐</li>
@@ -50,8 +51,8 @@
     </div>
 
     <div class="text-center my-5">
-        <button class='btn-primary btn-lg mx-2 fill-button'>Train</button>
-        <button class='btn-lg mx-2 empty-button' onclick="resetDom()">Reset</button>
+        <button class='btn-primary btn-lg mx-2 fill-button' id="btn-train">Train</button>
+        <button class='btn-lg mx-2 empty-button' id="btn-reset">Reset</button>
     </div>
 
 
@@ -59,70 +60,78 @@
         <h2>Now, build your smoothie!</h2>
         <h5>The IA will determine if the smoothie is for your taste</h5>
         <div class="p-2">
-            <form action="#">
-                <select name="fruit-one" id="fruit-one">
+            <form action="#" id="myForm">
+                <select name="fruit-one" id="fruit-one" class="prediction-input">
                     <option value=" "> </option>
-                    <option value="apple">🍎</option>
-                    <option value="pear">🍐</option>
-                    <option value="peach">🍑</option>
-                    <option value="banana">🍌</option>
-                    <option value="watermelon">🍉</option>
-                    <option value="grapes">🍇</option>
-                    <option value="strawberry">🍓</option>
-                    <option value="coconout">🥥</option>
-                    <option value="melon">🍈</option>
-                    <option value="kiwi">🥝</option>
-                    <option value="pineapple">🍍</option>
+                    <option value="🍎">🍎</option>
+                    <option value="🍐">🍐</option>
+                    <option value="🍑">🍑</option>
+                    <option value="🍌">🍌</option>
+                    <option value="🍉">🍉</option>
+                    <option value="🍇">🍇</option>
+                    <option value="🍓">🍓</option>
+                    <option value="🥥">🥥</option>
+                    <option value="🍈">🍈</option>
+                    <option value="🥝">🥝</option>
+                    <option value="🍍">🍍</option>
+                    <option value="🥭">🥭</option>
+
                 </select>
-                <select name="fruit-two" id="fruit-two">
+                <select name="fruit-two" id="fruit-two" class="prediction-input">
                     <option value=" "> </option>
-                    <option value="apple">🍎</option>
-                    <option value="pear">🍐</option>
-                    <option value="peach">🍑</option>
-                    <option value="banana">🍌</option>
-                    <option value="watermelon">🍉</option>
-                    <option value="grapes">🍇</option>
-                    <option value="strawberry">🍓</option>
-                    <option value="coconout">🥥</option>
-                    <option value="melon">🍈</option>
-                    <option value="kiwi">🥝</option>
-                    <option value="pineapple">🍍</option>
+                    <option value="🍎">🍎</option>
+                    <option value="🍐">🍐</option>
+                    <option value="🍑">🍑</option>
+                    <option value="🍌">🍌</option>
+                    <option value="🍉">🍉</option>
+                    <option value="🍇">🍇</option>
+                    <option value="🍓">🍓</option>
+                    <option value="🥥">🥥</option>
+                    <option value="🍈">🍈</option>
+                    <option value="🥝">🥝</option>
+                    <option value="🍍">🍍</option>
+                    <option value="🥭">🥭</option>
+
                 </select>
-                <select name="fruit-three" id="fruit-three">
+                <select name="fruit-three" id="fruit-three" class="prediction-input">
                     <option value=" "> </option>
-                    <option value="apple">🍎</option>
-                    <option value="pear">🍐</option>
-                    <option value="peach">🍑</option>
-                    <option value="banana">🍌</option>
-                    <option value="watermelon">🍉</option>
-                    <option value="grapes">🍇</option>
-                    <option value="strawberry">🍓</option>
-                    <option value="coconout">🥥</option>
-                    <option value="melon">🍈</option>
-                    <option value="kiwi">🥝</option>
-                    <option value="pineapple">🍍</option>
+                    <option value="🍎">🍎</option>
+                    <option value="🍐">🍐</option>
+                    <option value="🍑">🍑</option>
+                    <option value="🍌">🍌</option>
+                    <option value="🍉">🍉</option>
+                    <option value="🍇">🍇</option>
+                    <option value="🍓">🍓</option>
+                    <option value="🥥">🥥</option>
+                    <option value="🍈">🍈</option>
+                    <option value="🥝">🥝</option>
+                    <option value="🍍">🍍</option>
+                    <option value="🥭">🥭</option>
+
                 </select>
-                <select name="fruit-four" id="fruit-four">
+                <select name="fruit-four" id="fruit-four" class="prediction-input">
                     <option value=" "> </option>
-                    <option value="apple">🍎</option>
-                    <option value="pear">🍐</option>
-                    <option value="peach">🍑</option>
-                    <option value="banana">🍌</option>
-                    <option value="watermelon">🍉</option>
-                    <option value="grapes">🍇</option>
-                    <option value="strawberry">🍓</option>
-                    <option value="coconout">🥥</option>
-                    <option value="melon">🍈</option>
-                    <option value="kiwi">🥝</option>
-                    <option value="pineapple">🍍</option>
+                    <option value="🍎">🍎</option>
+                    <option value="🍐">🍐</option>
+                    <option value="🍑">🍑</option>
+                    <option value="🍌">🍌</option>
+                    <option value="🍉">🍉</option>
+                    <option value="🍇">🍇</option>
+                    <option value="🍓">🍓</option>
+                    <option value="🥥">🥥</option>
+                    <option value="🍈">🍈</option>
+                    <option value="🥝">🥝</option>
+                    <option value="🍍">🍍</option>
+                    <option value="🥭">🥭</option>
+
                 </select>
-                <input type="button" value="Predict" class="submit-button btn-lg">
+                <input type="button" value="Predict" class="submit-button btn-lg" id="btn-predict">
             </form>
             <div class=predicted-rating>
                 <p class="text-center pt-5">You'll like the smoothie in a:
                     <!--To be filled with the result-->
                 </p>
-                <ul class="list-inline">
+                <ul class="list-inline predicted-star">
                     <li class="list-inline-item">⭐</li>
                     <li class="list-inline-item">⭐</li>
                     <li class="list-inline-item">⭐</li>
@@ -133,7 +142,7 @@
             </div>
         </div>
     </div>
-    <script src="script.js" type="text/javascript"></script>
+    <script src="   script.js" type="module"></script>
 </body>
 
 </html>

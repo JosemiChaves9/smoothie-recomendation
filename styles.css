@@ -70,9 +70,14 @@ header {
     filter: grayscale(100%);
 }
 
+.predicted-star,
 .star--active,
 .star--active ~ .star {
     filter: grayscale(0%);
+  }
+
+  .predicted-star {
+      cursor: default;
   }
 
 .rating {

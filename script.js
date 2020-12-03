@@ -1,9 +1,16 @@
-const fruits = ['🍎', '🍐', '🍑', '🍌', '🍉', '🍇', '🍓', '🥥', '🍈', '🥝', '🍍'];
+import { SmoothieNeuralNet } from './ai.js';
 
+
+// Necessary variables and elements
+const fruits = ['🍎', '🍐', '🍑', '🍌', '🍉', '🍇', '🍓', '🥥', '🍈', '🥝', '🍍', '🥭'];
 const template = document.getElementById("smoothie-template");
 const container = document.getElementById("container");
+const btnPredictEl = document.getElementById('btn-predict')
+const btnResetEl = document.getElementById('btn-reset')
+const btnTrainEl = document.getElementById('btn-train')
 const smoothiesQuantity = 20;
 let smoothieList;
+const net = new SmoothieNeuralNet;
 
 const generateSmoothieList = () => {
     smoothieList = new Array(smoothiesQuantity).fill(null).map(() => ({
@@ -73,11 +80,28 @@ const resetDom = () => {
     start();
 }
 
+
 // START
 
 const start = () => {
     generateSmoothieList();
     renderSmoothieListToDom(smoothieList);
 }
+
+const onClickOnPredict = () => {
+    const predictionInput = Array.from(document.getElementsByClassName('prediction-input')).map(el => el.value)
+    console.log(predictionInput)
+}
+
+
+
+const onClickOnTrain = () => {
+    net.train(fruits, smoothieList)
+}
+
+// Listeners
+btnPredictEl.addEventListener('click', onClickOnPredict)
+btnResetEl.addEventListener('click', resetDom)
+btnTrainEl.addEventListener('click', onClickOnTrain)
 
 start();
