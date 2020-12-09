@@ -67,8 +67,8 @@ header {
 
 .star-predicted,
 .star {
+    filter: grayscale(0%);
     cursor: pointer;
-    filter: grayscale(100%);
 }
 
 .star-predicted {
@@ -77,13 +77,11 @@ header {
 
 .rating {
     display: flex;
-    flex-direction: row-reverse;
     justify-content: center;
 }
 
-.star--active,
 .star--active ~ .star {
-    filter: grayscale(0%);
+    filter: grayscale(100%);
   }
 
 footer{

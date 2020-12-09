@@ -2,7 +2,6 @@
 
 import { SmoothieNeuralNet } from './ai.js';
 
-
 // Necessary variables and elements
 const fruits = ['🍎', '🍐', '🍑', '🍌', '🍉', '🍇', '🍓', '🥥', '🍈', '🥝', '🍍', '🥭'];
 const template = document.getElementById("smoothie-template");
@@ -15,9 +14,10 @@ const starPredicted2 = document.getElementById('rating-2');
 const starPredicted3 = document.getElementById('rating-3');
 const starPredicted4 = document.getElementById('rating-4');
 const starPredicted5 = document.getElementById('rating-5');
-let predictionRating = document.getElementById("prediction-rating");
+const predictionRating = document.getElementById("prediction-rating");
 const smoothiesQuantity = 20;
 let smoothieList;
+
 const net = new SmoothieNeuralNet();
 
 
@@ -89,21 +89,12 @@ const resetDom = () => {
     start();
 };
 
-// START
-
-const start = () => {
-    generateSmoothieList();
-    renderSmoothieListToDom(smoothieList);
-};
-
-
 const onClickOnPredict = () => {
     const predictionInput = Array.from(document.getElementsByClassName('prediction-input')).map(el => el.value);
     const result = net.predict(fruits, predictionInput);
     const scorePercentage = Math.trunc(result.score * 100);
     predictionRating.innerHTML = `${scorePercentage} %`;
     renderStarsRating(scorePercentage);
-
 };
 
 const renderStarsRating = (scorePercentage) => {
@@ -118,29 +109,18 @@ const renderStarsRating = (scorePercentage) => {
             break;
         case scorePercentage < 40:
             starPredicted2.classList.add(`star--active`);
-            starPredicted1.classList.add(`star--active`);
             break;
         case scorePercentage < 60:
             starPredicted3.classList.add(`star--active`);
-            starPredicted2.classList.add(`star--active`);
-            starPredicted1.classList.add(`star--active`);
             break;
         case scorePercentage < 80:
             starPredicted4.classList.add(`star--active`);
-            starPredicted3.classList.add(`star--active`);
-            starPredicted2.classList.add(`star--active`);
-            starPredicted1.classList.add(`star--active`);
             break;
         case scorePercentage < 100:
             starPredicted5.classList.add(`star--active`);
-            starPredicted4.classList.add(`star--active`);
-            starPredicted3.classList.add(`star--active`);
-            starPredicted2.classList.add(`star--active`);
-            starPredicted1.classList.add(`star--active`);
             break;
     }
 };
-
 
 const onClickOnTrain = () => {
     net.train(fruits, smoothieList);
@@ -151,6 +131,11 @@ btnPredictEl.addEventListener('click', onClickOnPredict);
 btnResetEl.addEventListener('click', resetDom);
 btnTrainEl.addEventListener('click', onClickOnTrain);
 
+// START
 
+const start = () => {
+    generateSmoothieList();
+    renderSmoothieListToDom(smoothieList);
+};
 
 start();
