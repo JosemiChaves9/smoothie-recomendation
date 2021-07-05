@@ -11,7 +11,7 @@ This app is developed with pure HTML, CSS an JS, just clone the repo and start t
 
 Then you can train the AI giving a rating to the smoothies combination that appears, once you've trained the AI, you will have your perfect smoothie recomendation.
 
-#Links
+## Links
 You can see a deployed version of this app [here](https://josemichaves9.github.io/smoothie-recomendation/).
 
 Created with ❤️  by [Jose Miguel Chaves](https://github.com/JosemiChaves9) as a [Mallorca Bootcamp](https://mallorcaboot.camp/) Challenge.
